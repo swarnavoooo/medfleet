@@ -1,0 +1,226 @@
+[
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "cust_create_table",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def cust_create_table():\n    c.execute('''CREATE TABLE IF NOT EXISTS Customers(\n                    C_Name VARCHAR(50) NOT NULL,\n                    C_Password VARCHAR(50) NOT NULL,\n                    C_Email VARCHAR(50) PRIMARY KEY NOT NULL, \n                    C_State VARCHAR(50) NOT NULL,\n                    C_Number VARCHAR(50) NOT NULL \n                    )''')\n    print('Customer Table create Successfully')\ndef customer_add_data(Cname,Cpass, Cemail, Cstate,Cnumber):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "customer_add_data",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def customer_add_data(Cname,Cpass, Cemail, Cstate,Cnumber):\n    c.execute('''INSERT INTO Customers (C_Name,C_Password,C_Email, C_State, C_Number) VALUES(?,?,?,?,?)''', (Cname,Cpass,  Cemail, Cstate,Cnumber))\n    conn.commit()\ndef customer_view_all_data():\n    c.execute('SELECT * FROM Customers')\n    customer_data = c.fetchall()\n    return customer_data\ndef customer_update(Cemail,Cnumber):\n    c.execute(''' UPDATE Customers SET C_Number = ? WHERE C_Email = ?''', (Cnumber,Cemail,))\n    conn.commit()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "customer_view_all_data",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def customer_view_all_data():\n    c.execute('SELECT * FROM Customers')\n    customer_data = c.fetchall()\n    return customer_data\ndef customer_update(Cemail,Cnumber):\n    c.execute(''' UPDATE Customers SET C_Number = ? WHERE C_Email = ?''', (Cnumber,Cemail,))\n    conn.commit()\n    print(\"Updating\")\ndef customer_delete(Cemail):\n    c.execute(''' DELETE FROM Customers WHERE C_Email = ?''', (Cemail,))",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "customer_update",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def customer_update(Cemail,Cnumber):\n    c.execute(''' UPDATE Customers SET C_Number = ? WHERE C_Email = ?''', (Cnumber,Cemail,))\n    conn.commit()\n    print(\"Updating\")\ndef customer_delete(Cemail):\n    c.execute(''' DELETE FROM Customers WHERE C_Email = ?''', (Cemail,))\n    conn.commit()\ndef drug_update(Duse, Did):\n    c.execute(''' UPDATE Drugs SET D_Use = ? WHERE D_id = ?''', (Duse,Did))\n    conn.commit()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "customer_delete",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def customer_delete(Cemail):\n    c.execute(''' DELETE FROM Customers WHERE C_Email = ?''', (Cemail,))\n    conn.commit()\ndef drug_update(Duse, Did):\n    c.execute(''' UPDATE Drugs SET D_Use = ? WHERE D_id = ?''', (Duse,Did))\n    conn.commit()\ndef drug_delete(Did):\n    c.execute(''' DELETE FROM Drugs WHERE D_id = ?''', (Did,))\n    conn.commit()\ndef drug_create_table():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "drug_update",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def drug_update(Duse, Did):\n    c.execute(''' UPDATE Drugs SET D_Use = ? WHERE D_id = ?''', (Duse,Did))\n    conn.commit()\ndef drug_delete(Did):\n    c.execute(''' DELETE FROM Drugs WHERE D_id = ?''', (Did,))\n    conn.commit()\ndef drug_create_table():\n    c.execute('''CREATE TABLE IF NOT EXISTS Drugs(\n                D_Name VARCHAR(50) NOT NULL,\n                D_ExpDate DATE NOT NULL, ",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "drug_delete",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def drug_delete(Did):\n    c.execute(''' DELETE FROM Drugs WHERE D_id = ?''', (Did,))\n    conn.commit()\ndef drug_create_table():\n    c.execute('''CREATE TABLE IF NOT EXISTS Drugs(\n                D_Name VARCHAR(50) NOT NULL,\n                D_ExpDate DATE NOT NULL, \n                D_Use VARCHAR(50) NOT NULL,\n                D_Qty INT NOT NULL, \n                D_id INT PRIMARY KEY NOT NULL)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "drug_create_table",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def drug_create_table():\n    c.execute('''CREATE TABLE IF NOT EXISTS Drugs(\n                D_Name VARCHAR(50) NOT NULL,\n                D_ExpDate DATE NOT NULL, \n                D_Use VARCHAR(50) NOT NULL,\n                D_Qty INT NOT NULL, \n                D_id INT PRIMARY KEY NOT NULL)\n                ''')\n    print('DRUG Table create Successfully')\ndef drug_add_data(Dname, Dexpdate, Duse, Dqty, Did):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "drug_add_data",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def drug_add_data(Dname, Dexpdate, Duse, Dqty, Did):\n    c.execute('''INSERT INTO Drugs (D_Name, D_Expdate, D_Use, D_Qty, D_id) VALUES(?,?,?,?,?)''', (Dname, Dexpdate, Duse, Dqty, Did))\n    conn.commit()\ndef drug_view_all_data():\n    c.execute('SELECT * FROM Drugs')\n    drug_data = c.fetchall()\n    return drug_data\ndef order_create_table():\n    c.execute('''\n        CREATE TABLE IF NOT EXISTS Orders(",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "drug_view_all_data",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def drug_view_all_data():\n    c.execute('SELECT * FROM Drugs')\n    drug_data = c.fetchall()\n    return drug_data\ndef order_create_table():\n    c.execute('''\n        CREATE TABLE IF NOT EXISTS Orders(\n                O_Name VARCHAR(100) NOT NULL,\n                O_Items VARCHAR(100) NOT NULL,\n                O_Qty VARCHAR(100) NOT NULL,",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "order_create_table",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def order_create_table():\n    c.execute('''\n        CREATE TABLE IF NOT EXISTS Orders(\n                O_Name VARCHAR(100) NOT NULL,\n                O_Items VARCHAR(100) NOT NULL,\n                O_Qty VARCHAR(100) NOT NULL,\n                O_id VARCHAR(100) PRIMARY KEY NOT NULL)\n    ''')\ndef order_delete(Oid):\n    c.execute(''' DELETE FROM Orders WHERE O_id = ?''', (Oid,))",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "order_delete",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def order_delete(Oid):\n    c.execute(''' DELETE FROM Orders WHERE O_id = ?''', (Oid,))\ndef order_add_data(O_Name,O_Items,O_Qty,O_id):\n    c.execute('''INSERT INTO Orders (O_Name, O_Items,O_Qty, O_id) VALUES(?,?,?,?)''',\n              (O_Name,O_Items,O_Qty,O_id))\n    conn.commit()\ndef order_view_data(customername):\n    c.execute('SELECT * FROM ORDERS Where O_Name == ?',(customername,))\n    order_data = c.fetchall()\n    return order_data",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "order_add_data",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def order_add_data(O_Name,O_Items,O_Qty,O_id):\n    c.execute('''INSERT INTO Orders (O_Name, O_Items,O_Qty, O_id) VALUES(?,?,?,?)''',\n              (O_Name,O_Items,O_Qty,O_id))\n    conn.commit()\ndef order_view_data(customername):\n    c.execute('SELECT * FROM ORDERS Where O_Name == ?',(customername,))\n    order_data = c.fetchall()\n    return order_data\ndef order_view_all_data():\n    c.execute('SELECT * FROM ORDERS')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "order_view_data",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def order_view_data(customername):\n    c.execute('SELECT * FROM ORDERS Where O_Name == ?',(customername,))\n    order_data = c.fetchall()\n    return order_data\ndef order_view_all_data():\n    c.execute('SELECT * FROM ORDERS')\n    order_all_data = c.fetchall()\n    return order_all_data\n#__________________________________________________________________________________",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "order_view_all_data",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def order_view_all_data():\n    c.execute('SELECT * FROM ORDERS')\n    order_all_data = c.fetchall()\n    return order_all_data\n#__________________________________________________________________________________\ndef admin():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def admin():\n    st.title(\"Pharmacy Database Dashboard\")\n    menu = [\"Drugs\", \"Customers\", \"Orders\", \"About\"]\n    choice = st.sidebar.selectbox(\"Menu\", menu)\n    ## DRUGS\n    if choice == \"Drugs\":\n        menu = [\"Add\", \"View\", \"Update\", \"Delete\"]\n        choice = st.sidebar.selectbox(\"Menu\", menu)\n        if choice == \"Add\":\n            st.subheader(\"Add Drugs\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "getauthenicate",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def getauthenicate(username, password):\n    #print(\"Auth\")\n    c.execute('SELECT C_Password FROM Customers WHERE C_Name = ?', (username,))\n    cust_password = c.fetchall()\n    #print(cust_password[0][0], \"Outside password\")\n    #print(password, \"Parameter password\")\n    if cust_password[0][0] == password:\n        #print(\"Inside password\")\n        return True\n    else:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "customer",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def customer(username, password):\n    if getauthenicate(username, password):\n        print(\"In Customer\")\n        st.title(\"Welcome to Pharmacy Store\")\n        st.subheader(\"Your Order Details\")\n        order_result = order_view_data(username)\n        # st.write(cust_result)\n        with st.expander(\"View All Order Data\"):\n            order_clean_df = pd.DataFrame(order_result, columns=[\"Name\", \"Items\", \"Qty\", \"ID\"])\n            st.dataframe(order_clean_df)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "conn = sqlite3.connect(\"drug_data.db\",check_same_thread=False)\nc = conn.cursor()\ndef cust_create_table():\n    c.execute('''CREATE TABLE IF NOT EXISTS Customers(\n                    C_Name VARCHAR(50) NOT NULL,\n                    C_Password VARCHAR(50) NOT NULL,\n                    C_Email VARCHAR(50) PRIMARY KEY NOT NULL, \n                    C_State VARCHAR(50) NOT NULL,\n                    C_Number VARCHAR(50) NOT NULL \n                    )''')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "c",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "c = conn.cursor()\ndef cust_create_table():\n    c.execute('''CREATE TABLE IF NOT EXISTS Customers(\n                    C_Name VARCHAR(50) NOT NULL,\n                    C_Password VARCHAR(50) NOT NULL,\n                    C_Email VARCHAR(50) PRIMARY KEY NOT NULL, \n                    C_State VARCHAR(50) NOT NULL,\n                    C_Number VARCHAR(50) NOT NULL \n                    )''')\n    print('Customer Table create Successfully')",
+        "detail": "main",
+        "documentation": {}
+    }
+]
