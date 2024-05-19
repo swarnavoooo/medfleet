@@ -249,7 +249,7 @@ def customer(username, password):
         st.info("When to USE: " + str(drug_result[1][2]))
 
         st.subheader("Drug: " + drug_result[2][0])
-        img = Image.open('images/vicks.JPG')
+        img = Image.open('images/vicks.jpg')
         st.image(img, width=100, caption="Rs. 65/-")
         vicks = st.slider(label="Quantity",min_value=0, max_value=5, key=3)
         st.info("When to USE: " + str(drug_result[2][2]))
